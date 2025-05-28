@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Branco Gelo / Fundo Claro */
+    --foreground: 240 10% 3.9%; /* Preto Suave / Texto Principal Claro */
+
+    --card: 210 40% 98%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 210 40% 98%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262.1 83.3% 57.8%; /* Azul Violeta Vibrante */
+    --primary-foreground: 210 20% 98%; /* Branco para contraste com primário */
+
+    --secondary: 270 60% 65%; /* Lilás Neon (mais claro para secundário) */
+    --secondary-foreground: 210 20% 98%; /* Branco para contraste com secundário */
+
+    --muted: 220 14.3% 95.9%; /* Cinza Claro para elementos muted */
+    --muted-foreground: 240 5% 65%; /* Cinza Médio para texto muted */
+
+    --accent: 270 70% 80%; /* Lilás mais claro para acentos */
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 72.2% 50.6%; /* Vermelho para destructive */
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 240 5.9% 90%; /* Borda Cinza Clara */
+    --input: 240 5.9% 90%; /* Input Cinza Claro */
+    --ring: 262.1 83.3% 57.8%; /* Ring Azul Violeta */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%; /* Preto Suave / Fundo Escuro */
+    --foreground: 210 20% 98%; /* Branco Gelo / Texto Principal Escuro */
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 262.1 83.3% 57.8%; /* Azul Violeta Vibrante (mantido) */
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 280 70% 55%; /* Lilás Neon (mais escuro para secundário no dark) */
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 240 3.7% 15.9%; /* Cinza Escuro para elementos muted */
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 280 60% 45%; /* Lilás mais escuro para acentos no dark */
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%; /* Vermelho Escuro para destructive */
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 240 3.7% 15.9%; /* Borda Cinza Escura */
+    --input: 240 3.7% 15.9%; /* Input Cinza Escuro */
+    --ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Fonte Inter como padrão */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Fonte Poppins para cabeçalhos */
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Adicionando import das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
